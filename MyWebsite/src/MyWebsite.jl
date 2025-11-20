@@ -14,13 +14,13 @@ function create_routes()
     )
 end
 
-img_asset(files...) = Asset(asset_path("images", files...))
+img_asset(files...) = Asset(joinpath("assets", "images", files...))
 
 include("styles.jl")
 include("index.jl")
 
 function asset_paths()
-    return [@__DIR__, asset_path(), asset_path("images"), asset_path("css")]
+    return [asset_path()]  
 end
 
 export index, website_styles, create_routes, asset_paths
